@@ -16,7 +16,7 @@ Our proposed method is split into three steps as follows:
 <p align="center">
   <img src="figures/proposed_method.png" width="800px"/>
   
-  Figure 1. Architecture diagram of the proposed method, where the top figure shows the overall inferencing process and the bottom block represents the training process of $DC$ using knowledge distillation from pre-trained teacher networks. Symbol $\copyright$ represents concatenation of inputs $X_{JPEG}$, $X_{GBlur}$, and $X_{AWGN}$. Grey/blue and orange/blue blocks represent pre-trained teacher and student networks.
+  Figure 1. Architecture diagram of the proposed method, where the top figure shows the overall inferencing process and the bottom block represents the training process of $DC$ using knowledge distillation from pre-trained teacher networks. Symbol &copy; represents concatenation of inputs $X_{JPEG}$, $X_{GBlur}$, and $X_{AWGN}$. Grey/blue and orange/blue blocks represent pre-trained teacher and student networks.
 </p>
 
 <!-- For more details of our proposed method and relevant details please refer to our [paper](link here).  -->
