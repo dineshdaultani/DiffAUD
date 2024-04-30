@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# C extensions
+*.so
+
+# Torch extensions
+*.pth
+*.pt
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.deb
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# input data, saved log, checkpoints, notebooks, specific python files...
+DDA/dataset/
+DDA/image_adapt/scripts/classifier_sample.py
+DDA/image_adapt/bilateral_filter.py
+DDA/image_adapt_new.sh
+DistilledClassifier/data/
+DistilledClassifier/input/
+DistilledClassifier/saved/
+DistilledClassifier/datasets/
+DistilledClassifier/paper_data/
+DistilledClassifier/checkpoints/
+DistilledClassifier/jupyter/
+DistilledClassifier/train_all_deg_hp_tuning.py
+DistilledClassifier/test_ensemble.py
+DistilledClassifier/experiments_train.sh
+DistilledClassifier/experiments_test.sh
+**/adapt_all.yaml
+**/deg_all.yaml
+
+# editor, os cache directory
+.vscode/
+.idea/
+__MACOSX/

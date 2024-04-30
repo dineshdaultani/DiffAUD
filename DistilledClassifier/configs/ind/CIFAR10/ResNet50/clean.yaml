@@ -1,0 +1,60 @@
+name: ResNet50_MMCV_CIFAR10
+n_gpu: 1
+model:
+  type: MM_Classifier
+  args:
+    type: ImageClassifier
+    backbone:
+      type: ResNet_CIFAR
+      depth: 50
+      num_stages: 4
+      out_indices: !!python/tuple [3,]
+      style: pytorch
+    neck:
+      type: GlobalAveragePooling
+    head:
+      type: LinearClsHead
+      num_classes: 10
+      in_channels: 2048
+      loss:
+        type: CrossEntropyLoss
+        loss_weight: 1.0
+      cal_acc: True
+      topk: !!python/tuple [1, 5]
+data_loader:
+  type: CIFAR10DataLoader
+  args:
+    data_dir: dataset/cifar_10
+    batch_size: 128
+    shuffle: true
+    validation_split: 0.0
+    num_workers: 2
+    deg_type: clean
+    deg_flag: clean
+optimizer:
+  type: SGD
+  args:
+    lr: 0.1
+    momentum: 0.9
+    weight_decay: 0.0001
+loss: 
+  - supervised_loss: CE
+loss_weights: [1.0]
+metrics:
+- accuracy@1
+- accuracy@5
+lr_scheduler:
+  type: MultiStepLR
+  args:
+    milestones: [100, 150]
+    gamma: 0.1
+trainer:
+  type: IndTrainer
+  args:
+    epochs: 200
+    save_dir: saved/
+    save_period: 1
+    verbosity: 2
+    monitor: max val_accuracy@1
+    early_stop: 200
+    tensorboard: true

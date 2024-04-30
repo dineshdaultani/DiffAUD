@@ -1,0 +1,71 @@
+name: convnextT_MMCV_Imagenet
+n_gpu: 1
+model:
+  type: MM_Classifier
+  # Pretrained model: https://mmclassification.readthedocs.io/en/latest/model_zoo.html - ConvNeXt-T
+  pretrained_path: saved/clean/IndTrainer/convnextT_MMCV_Imagenet/train/pretrained_model/convnext-tiny_3rdparty_32xb128_in1k_20220124-18abde00.pth
+  args:
+    type: ImageClassifier
+    backbone:
+      type: ConvNeXt
+      arch: tiny
+      out_indices: !!python/tuple [3,]
+      drop_path_rate: 0.1
+      gap_before_final_norm: true
+      init_cfg:
+      - type: TruncNormal
+        layer:
+        - Conv2d
+        - Linear
+        std: 0.02
+        bias: 0.0
+      - type: Constant
+        layer:
+        - LayerNorm
+        val: 1.0
+        bias: 0.0      
+    head:
+      type: LinearClsHead
+      num_classes: 1000
+      in_channels: 768
+      loss:
+        loss_weight: 1.0
+        type: CrossEntropyLoss
+      cal_acc: True
+      topk: !!python/tuple [1, 5]
+data_loader:
+  type: ImagenetDataLoader
+  args:
+    data_dir: dataset/generated/imagenet_50k_deg # Adapted images
+    batch_size: 128
+    shuffle: true
+    validation_split: 0.0
+    num_workers: 4
+    deg_type: jpeg 
+    deg_flag: deg
+optimizer:
+  type: SGD
+  args:
+    lr: 0.001
+    weight_decay: 0.0001
+loss: 
+  - supervised_loss: CE
+loss_weights: [1.0]
+metrics:
+- accuracy@1
+- accuracy@5
+lr_scheduler:
+  type: MultiStepLR
+  args:
+    milestones: [15, 30, 45]
+    gamma: 0.1
+trainer:
+  type: IndTrainer
+  args:
+    epochs: 50
+    save_dir: saved/
+    save_period: 1
+    verbosity: 2
+    monitor: max val_accuracy@1
+    early_stop: 50
+    tensorboard: true

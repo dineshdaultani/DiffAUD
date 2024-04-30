@@ -1,0 +1,8 @@
+.git
+
+# input data, saved log, checkpoints
+data/
+input/
+saved/
+datasets/
+
