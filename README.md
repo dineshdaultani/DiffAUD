@@ -1,6 +1,6 @@
 # Diffusion-Based Adaptation for Classification of Unknown Degraded Images
 
-[[Project Page](http://www.ok.sc.e.titech.ac.jp/res/DiffAUD/index.html)]
+[[Project Page](http://www.ok.sc.e.titech.ac.jp/res/CNNIR/DiffAUD/)]
 <!-- [[paper](Link here)] -->
 
 This repository contains the source code associated with the paper "Diffusion-Based Adaptation for Classification of Unknown Degraded Images", presented at CVPR 2024 NTIRE workshop.
