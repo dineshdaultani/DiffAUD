@@ -1,7 +1,6 @@
 # Diffusion-Based Adaptation for Classification of Unknown Degraded Images
 
-[[Project Page](http://www.ok.sc.e.titech.ac.jp/res/CNNIR/DiffAUD/)]
-<!-- [[paper](Link here)] -->
+[[Project Page](http://www.ok.sc.e.titech.ac.jp/res/CNNIR/DiffAUD/)] [[paper](https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/html/Daultani_Diffusion-Based_Adaptation_for_Classification_of_Unknown_Degraded_Images_CVPRW_2024_paper.html)]
 
 This repository contains the source code associated with the paper "Diffusion-Based Adaptation for Classification of Unknown Degraded Images", presented at CVPR 2024 NTIRE workshop.
 
@@ -120,7 +119,9 @@ If you find our work or this repository helpful, please consider citing our work
 @InProceedings{Daultani_2024_CVPR,
     author    = {Daultani, Dinesh and Tanaka, Masayuki and Okutomi, Masatoshi and Endo, Kazuki},
     title     = {Diffusion-Based Adaptation for Classification of Unknown Degraded Images},
-    booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
     year      = {2024},
+    pages     = {5982-5991}
 }
 ```
