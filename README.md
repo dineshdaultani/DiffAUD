@@ -2,6 +2,8 @@
 
 [[Project Page](http://www.ok.sc.e.titech.ac.jp/res/CNNIR/DiffAUD/)] [[paper](https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/html/Daultani_Diffusion-Based_Adaptation_for_Classification_of_Unknown_Degraded_Images_CVPRW_2024_paper.html)]
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/diffusion-based-adaptation-for-classification/domain-generalization-on-imagenet-c)](https://paperswithcode.com/sota/domain-generalization-on-imagenet-c?p=diffusion-based-adaptation-for-classification)
+
 This repository contains the source code associated with the paper "Diffusion-Based Adaptation for Classification of Unknown Degraded Images", presented at CVPR 2024 NTIRE workshop.
 
 ## Abstract
